@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scaling Your Tutoring Business: A Strategic Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: white;
+            border-radius: 20px;
+            text-align: center;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        .intro-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .intro-section h2 {
+            color: #e74c3c;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .intro-section p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .phase-container {
+            background: white;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .phase-header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 30px;
+            cursor: pointer;
+            position: relative;
+            border-bottom: 3px solid #2980b9;
+        }
+
+        .phase-header h2 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .phase-header .subtitle {
+            opacity: 0.9;
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .toggle-btn {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .phase-content {
+            padding: 0;
+            display: none;
+        }
+
+        .phase-content.active {
+            display: block;
+        }
+
+        .step {
+            padding: 40px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .step:last-child {
+            border-bottom: none;
+        }
+
+        .step h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .step p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #34495e;
+        }
+
+        .how-to-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            border-left: 5px solid #3498db;
+        }
+
+        .how-to-section h4 {
+            color: #2980b9;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .how-to-steps {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .how-to-steps li {
+            counter-increment: step-counter;
+            margin-bottom: 15px;
+            padding-left: 40px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .how-to-steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #3498db;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .example-box {
+            background: #e8f5e8;
+            border: 2px solid #27ae60;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .example-box h4 {
+            color: #27ae60;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .example-box p {
+            font-style: italic;
+            color: #2c3e50;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .warning-box h4 {
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .checklist {
+            background: #f1f2f6;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .checklist h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .checklist-items {
+            list-style: none;
+        }
+
+        .checklist-items li {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .checklist-items li:hover {
+            background: #e9ecef;
+            padding-left: 35px;
+        }
+
+        .checklist-items li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .checklist-items li.completed::before {
+            content: "✅";
+        }
+
+        .checklist-items li.completed {
+            text-decoration: line-through;
+            color: #7f8c8d;
+        }
+
+        .next-steps {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .next-steps h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .next-steps p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .conversation-style {
+            background: #fff;
+            border: 3px solid #3498db;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .conversation-style::before {
+            content: "💬";
+            position: absolute;
+            top: -15px;
+            left: 30px;
+            background: white;
+            padding: 0 10px;
+            font-size: 1.5rem;
+        }
+
+        .conversation-style h4 {
+            color: #2980b9;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .cost-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .cost-item {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .cost-amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .step {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌱 Scaling Your Tutoring Business</h1>
+            <p>A strategic guide to unlocking the £2B UK market opportunities</p>
+        </div>
+
+        <div class="intro-section">
+            <h2>Hello! Let's Unlock Your Business Potential 👋</h2>
+            <p>You already have a small tutoring business running - that's wonderful! Now it's time to think strategically about growth.</p>
+            
+            <p>The UK tutoring market is worth £2 billion annually, with primary tutoring representing £700 million of that market. There are three clear pathways to significantly scale your business, each with different requirements, timelines, and profit potential.</p>
+            
+            <p>This guide will help you understand these opportunities, assess which pathway suits you best, and create a step-by-step plan to unlock serious growth in your tutoring business.</p>
+            
+            <div class="conversation-style">
+                <h4>This is about strategic growth, not just getting more students</h4>
+                <p>We'll focus on the highest-value opportunities that can transform your small tutoring business into a substantial income stream through smart positioning, not just working more hours.</p>
+            </div>
+        </div>
+
+        <!-- Step 1: Understanding What You Have -->
+        <div class="phase-container">
+            <div class="phase-header" onclick="togglePhase(1)">
+                <h2>Step 1: Analyzing Your Current Foundation</h2>
+                <p class="subtitle">Understanding your starting point and readiness for growth (Week 1)</p>
+                <span class="toggle-btn" id="toggle1">👇</span>
+            </div>
+            <div class="phase-content" id="phase1">
+                <div class="step">
+                    <h3>Business Foundation Assessment 🎯</h3>
+                    <p>Before exploring growth opportunities, let's understand exactly what you have now and how strong your foundation is.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🔍 Current Business Analysis:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Student Portfolio:</strong> How many students, what subjects, which year groups?</li>
+                            <li><strong>Revenue Analysis:</strong> Monthly income, hourly rates, payment patterns</li>
+                            <li><strong>Capacity Utilization:</strong> How many hours per week, travel time, preparation time</li>
+                            <li><strong>Customer Satisfaction:</strong> Retention rates, parent feedback, student progress</li>
+                            <li><strong>Market Position:</strong> How do parents find you? What makes you different?</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>📊 Sarah's Business Foundation:</h4>
+                        <p><strong>Students:</strong> 6 regular students (Years 3-5, Maths & English)<br>
+                        <strong>Revenue:</strong> £600/month (£25/hour average)<br>
+                        <strong>Time:</strong> 12 tutoring hours + 8 travel/prep = 20 hours/week<br>
+                        <strong>Retention:</strong> Average 8 months, 90% renewal rate<br>
+                        <strong>Acquisition:</strong> 100% word-of-mouth referrals</p>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ Foundation Assessment Complete:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">I know my exact monthly revenue and costs</li>
+                            <li onclick="toggleTask(this)">I've calculated my real hourly profit (including all time)</li>
+                            <li onclick="toggleTask(this)">I understand my student retention patterns</li>
+                            <li onclick="toggleTask(this)">I know how parents currently find me</li>
+                            <li onclick="toggleTask(this)">I've assessed my capacity for growth</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Product-Market Fit Validation 📈</h3>
+                    <p>Strong product-market fit is essential before scaling. Let's test if you have it.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🎯 The Three Key Tests:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Recommendation Test:</strong> Ask parents: "How likely (1-10) would you be to recommend me to a friend?"</li>
+                            <li><strong>Demand Test:</strong> Mention you have availability - how many inquiries do you get?</li>
+                            <li><strong>Retention Test:</strong> Do students stay 6+ months? Do they renew automatically?</li>
+                        </ol>
+                    </div>
+
+                    <div class="conversation-style">
+                        <h4>What Strong Product-Market Fit Looks Like:</h4>
+                        <p>• 9-10 recommendation scores from most parents<br>
+                        • Easy to get new students through referrals<br>
+                        • Students stay 6+ months on average<br>
+                        • Parents can clearly explain your value<br>
+                        • You could raise prices without losing students</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: Validating Market Demand (Simple User Interviews) -->
+        <div class="phase-container">
+            <div class="phase-header" onclick="togglePhase(2)">
+                <h2>Step 2: Validating Market Demand</h2>
+                <p class="subtitle">Simple conversations to test your three growth opportunities (Week 2)</p>
+                <span class="toggle-btn" id="toggle2">👇</span>
+            </div>
+            <div class="phase-content" id="phase2">
+                <div class="step">
+                    <h3>Why Talk to People Before You Build? 🗣️</h3>
+                    <p>Before you invest time and money into any growth pathway, let's make sure people actually want what you're thinking of offering. This isn't complicated research - it's just having smart conversations.</p>
+                    
+                    <div class="conversation-style">
+                        <h4>The Simple Approach:</h4>
+                        <p>Instead of formal surveys, we'll have natural conversations with different types of people over the next 2 weeks. You probably chat with parents anyway - we're just going to be a bit more strategic about what we ask!</p>
+                    </div>
+
+                    <div class="how-to-section">
+                        <h4>🎯 Your Interview Targets (12-15 total conversations):</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Your current parents (4-5 chats):</strong> Test if they'd want your new services</li>
+                            <li><strong>Parents of SEN children (3-4 chats):</strong> Understand their needs and spending</li>
+                            <li><strong>School contacts (2-3 chats):</strong> Explore partnership possibilities</li>
+                            <li><strong>Other local parents (3-4 chats):</strong> Find out why they don't use tutoring</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>📱 How Sarah Made This Easy:</h4>
+                        <p>"I realized I was already chatting with parents regularly. I just started asking better questions! Instead of 'How's Emma doing?' I'd ask 'What's the biggest challenge with Emma's learning right now?' The conversations became much more useful."</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Quick Chat Guide: Current Parents (5 minutes each) 💬</h3>
+                    <p>These are the easiest conversations - you already know these people! Use these during pickup/dropoff or send a quick text.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🔍 The 5 Key Questions (keep it casual!):</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>"How's [child] finding our sessions?"</strong> (Check they're happy first)</li>
+                            <li><strong>"Would you be interested in [child] learning alongside 2-3 other children for £20 instead of £25?"</strong> (Test group sessions)</li>
+                            <li><strong>"Do you know anyone struggling to find support for a child with dyslexia/ADHD?"</strong> (Test SEN opportunity)</li>
+                            <li><strong>"Would you pay £30-40 for specialist 11+ preparation?"</strong> (Test premium pricing)</li>
+                            <li><strong>"Do you know any parents who'd love tutoring but think it's too expensive?"</strong> (Find new customers)</li>
+                        </ol>
+                    </div>
+
+                    <div class="conversation-style">
+                        <h4>Sample Text Message:</h4>
+                        <p>"Hi! Hope you're well. I'm exploring some new services and would love your quick thoughts. Do you have 5 minutes for a chat this week? Would really value your opinion as one of my trusted parents! 😊"</p>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ After each parent chat, note down:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">Their reaction to group sessions (interested/not interested/price too high)</li>
+                            <li onclick="toggleTask(this)">Whether they know families needing SEN support</li>
+                            <li onclick="toggleTask(this)">What they'd pay for premium services</li>
+                            <li onclick="toggleTask(this)">Any referrals or connections they mention</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Exploring SEN Opportunities (10 minutes each) 🧠</h3>
+                    <p>This is about understanding a potentially lucrative market. Find parents through local SEN groups, Facebook, or ask your current parents for introductions.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🎯 Simple Approach Message:</h4>
+                        <p>"Hi, I'm a local tutor exploring how to better support children with learning differences. Would you have 10 minutes to share your experience? I'd really value your insights as a parent who understands these challenges."</p>
+                    </div>
+
+                    <div class="how-to-section">
+                        <h4>💡 The 6 Essential Questions:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>"What's the biggest challenge in finding support for [child]?"</strong></li>
+                            <li><strong>"How far do you currently travel for specialist help?"</strong></li>
+                            <li><strong>"What do you currently pay for specialist tutoring/support?"</strong></li>
+                            <li><strong>"Would £40-50/hour feel reasonable for qualified local SEN support?"</strong></li>
+                            <li><strong>"What qualifications would you want to see?"</strong></li>
+                            <li><strong>"Do you know other parents in similar situations?"</strong></li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>🎯 What Sarah Discovered:</h4>
+                        <p>"I spoke to 4 SEN parents. Three of them drive 45+ minutes for support and pay £50-60/hour! They all said they'd prefer someone local. Two mentioned they know other parents desperately looking for help. This was a much bigger opportunity than I thought."</p>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>⚠️ Important Note:</h4>
+                        <p>Be sensitive - these parents often feel frustrated with the system. Listen more than you talk, and don't make promises you can't keep yet. Focus on understanding their world.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>School Partnership Exploration (15 minutes each) 🏫</h3>
+                    <p>This is about building relationships, not selling. Approach 2-3 local schools where you might have some connection.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>📧 Email Approach:</h4>
+                        <p><strong>Subject:</strong> "Local tutoring service - exploring how to support primary schools"<br><br>
+                        
+                        "Dear [Head Teacher/SENCO],<br><br>
+                        
+                        I'm Sunitha from Educere Learning, a local primary tutoring service. I'm exploring how we might support schools in our area and would value 15 minutes of your time to understand your challenges and needs.<br><br>
+                        
+                        I'm not trying to sell anything - I'm genuinely interested in how tutoring services could work alongside schools to improve outcomes for children.<br><br>
+                        
+                        Would you have 15 minutes available in the next couple of weeks?<br><br>
+                        
+                        Best regards,<br>
+                        Sunitha"</p>
+                    </div>
+
+                    <div class="how-to-section">
+                        <h4>🗣️ The 5 Key Questions for Schools:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>"What are your biggest challenges with children who need extra academic support?"</strong></li>
+                            <li><strong>"Have you worked with external tutoring services before? What worked/didn't work?"</strong></li>
+                            <li><strong>"Would after-school programs on your premises be of interest?"</strong></li>
+                            <li><strong>"How many children might benefit from small group catch-up sessions?"</strong></li>
+                            <li><strong>"What would need to be true for a partnership to work for your school?"</strong></li>
+                        </ol>
+                    </div>
+
+                    <div class="conversation-style">
+                        <h4>What You're Really Looking For:</h4>
+                        <p>• Do they seem genuinely interested or just being polite?<br>
+                        • Do they mention specific numbers of children who need help?<br>
+                        • Do they ask follow-up questions about your services?<br>
+                        • Do they mention budget or funding sources?<br>
+                        • Do they suggest next steps or other people to speak with?</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Understanding Non-Customers (5 minutes each) 🤔</h3>
+                    <p>Talk to parents who don't use tutoring to understand why not. This helps you find ways to reach new customers.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🎯 Where to Find These Parents:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>School gate conversations:</strong> "I'm doing some research about local education..."</li>
+                            <li><strong>Local parent Facebook groups:</strong> Ask permission to post about research</li>
+                            <li><strong>Coffee with friends:</strong> "Can I pick your brain about something..."</li>
+                            <li><strong>Community events:</strong> School fairs, sports days, etc.</li>
+                        </ol>
+                    </div>
+
+                    <div class="how-to-section">
+                        <h4>🔍 The 4 Quick Questions:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>"Have you ever considered tutoring for [child]? Why/why not?"</strong></li>
+                            <li><strong>"What would you expect tutoring to cost? What would feel too expensive?"</strong></li>
+                            <li><strong>"Would group sessions with 3-4 children be interesting at a lower price?"</strong></li>
+                            <li><strong>"What would need to happen for you to consider tutoring?"</strong></li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>💡 Sarah's Key Insight:</h4>
+                        <p>"I found that many parents think tutoring is only for 'struggling' children or costs £50+ per hour. When I mentioned £25/hour and that it's also for building confidence, several parents suddenly became interested. I was positioning it wrong!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: The Three Strategic Opportunities -->
+        <div class="phase-container">
+            <div class="phase-header" onclick="togglePhase(2)">
+                <h2>Step 2: Your Three Strategic Growth Pathways</h2>
+                <p class="subtitle">Unlocking the biggest opportunities in the £2B UK tutoring market (Week 2)</p>
+                <span class="toggle-btn" id="toggle2">👇</span>
+            </div>
+            <div class="phase-content" id="phase2">
+                <div class="step">
+                    <h3>Understanding Your Three Growth Options 🎯</h3>
+                    <p>Based on market research, there are three clear pathways to scale your tutoring business. Each has different requirements, timelines, and profit potential.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🚀 The Three Strategic Opportunities:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>PATHWAY 1: Scale Existing Primary Tutoring</strong><br>
+                            Grow your current service through better systems, pricing, and efficiency</li>
+                            <li><strong>PATHWAY 2: Specialize in SEN Children Support</strong><br>
+                            Target the underserved Special Educational Needs market (£50-80/hour)</li>
+                            <li><strong>PATHWAY 3: Partner with Schools & Local Authorities</strong><br>
+                            Work directly with institutions to improve learning outcomes (£20K-100K contracts)</li>
+                        </ol>
+                    </div>
+
+                    <div class="conversation-style">
+                        <h4>Which pathway is right for you?</h4>
+                        <p>You don't have to choose just one! Many successful tutoring businesses combine elements from all three. But it's smart to focus on one pathway first, get it working well, then add the others.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Pathway 1: Scale Your Existing Primary Tutoring 📈</h3>
+                    <p>This is the "do more of what's working" approach. Lower risk, but requires smart systems and efficiency improvements.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🔍 How to evaluate if this pathway suits you:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Check your current demand:</strong> Do you have a waiting list or regular inquiries?</li>
+                            <li><strong>Assess your capacity:</strong> Could you handle 15-20 students without burning out?</li>
+                            <li><strong>Review your profitability:</strong> Are you making £20+ per hour after all costs?</li>
+                            <li><strong>Consider your market:</strong> Is there room for more general primary tutoring in your area?</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>📊 Scaling Opportunity Assessment:</h4>
+                        <p><strong>Current:</strong> 6 students, £600/month<br>
+                        <strong>Scaled:</strong> 18 students, £1,800/month<br>
+                        <strong>Requirements:</strong> Better scheduling, group sessions, price optimization<br>
+                        <strong>Timeline:</strong> 6-9 months to full capacity<br>
+                        <strong>Investment:</strong> £500-1,000 in systems and marketing</p>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ Pathway 1 Readiness Check:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">I regularly get new inquiries without advertising</li>
+                            <li onclick="toggleTask(this)">My current students stay for 6+ months on average</li>
+                            <li onclick="toggleTask(this)">I'm making £20+ per hour after all costs</li>
+                            <li onclick="toggleTask(this)">I could physically handle 15-20 students</li>
+                            <li onclick="toggleTask(this)">My local area has demand for more primary tutoring</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Pathway 2: Specialize in SEN Children Support 🧠</h3>
+                    <p>This is the highest-value opportunity. Parents pay £50-80/hour for specialist SEN support, and there's a massive shortage of qualified providers.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🎯 Why SEN Support is a Game-Changer:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Premium Pricing:</strong> £50-80/hour vs £25 for general tutoring</li>
+                            <li><strong>High Demand:</strong> Growing awareness of ADHD, autism, dyslexia</li>
+                            <li><strong>Low Competition:</strong> Most tutors aren't qualified for SEN support</li>
+                            <li><strong>Long Retention:</strong> SEN students often need ongoing support for years</li>
+                            <li><strong>Parental Investment:</strong> Parents prioritize and budget heavily for SEN support</li>
+                        </ol>
+                    </div>
+
+                    <div class="how-to-section">
+                        <h4>🛠️ How to transition into SEN support:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Get qualified:</strong> SEN training, autism awareness, dyslexia support courses</li>
+                            <li><strong>Start with assessment:</strong> Offer SEN assessments to current families</li>
+                            <li><strong>Build experience:</strong> Work with 2-3 SEN children to develop expertise</li>
+                            <li><strong>Create specialized materials:</strong> Develop resources for different SEN needs</li>
+                            <li><strong>Network with professionals:</strong> Connect with educational psychologists, SENCO coordinators</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>💰 SEN Support Business Model:</h4>
+                        <p><strong>Training Investment:</strong> £1,000-2,000 in SEN qualifications<br>
+                        <strong>Pricing:</strong> £60/hour (vs £25 current)<br>
+                        <strong>Capacity:</strong> 10 SEN students = £2,400/month<br>
+                        <strong>Timeline:</strong> 6 months training + 6 months building reputation<br>
+                        <strong>ROI:</strong> 140% increase in hourly rate</p>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>⚠️ SEN Support Requirements:</h4>
+                        <p>This pathway requires proper training and qualifications. You'll need patience, specialized knowledge, and possibly additional insurance. But the financial and impact rewards are substantial.</p>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ Pathway 2 Readiness Check:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">I'm genuinely interested in supporting children with learning differences</li>
+                            <li onclick="toggleTask(this)">I'm willing to invest in specialist training and qualifications</li>
+                            <li onclick="toggleTask(this)">I have patience for children who learn differently</li>
+                            <li onclick="toggleTask(this)">I can handle more complex family situations and needs</li>
+                            <li onclick="toggleTask(this)">I'm prepared for longer-term student relationships</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Pathway 3: Partner with Schools & Local Authorities 🏫</h3>
+                    <p>This is the highest revenue potential: institutional contracts worth £20,000-£100,000 annually. You'd work directly with schools to improve learning outcomes.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🏛️ Types of School/Authority Partnerships:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>After-school tutoring programs:</strong> On-site support for struggling students</li>
+                            <li><strong>Catch-up support contracts:</strong> Government-funded programs for disadvantaged students</li>
+                            <li><strong>11+ preparation courses:</strong> Group programs for Year 5/6 cohorts</li>
+                            <li><strong>Holiday learning programs:</strong> Summer schools and intensive courses</li>
+                            <li><strong>Teacher training workshops:</strong> Professional development for teaching staff</li>
+                        </ol>
+                    </div>
+
+                    <div class="how-to-section">
+                        <h4>📋 How to start building school partnerships:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Research local needs:</strong> Which schools have falling SATs results or Ofsted concerns?</li>
+                            <li><strong>Start small:</strong> Offer a free pilot program to one school</li>
+                            <li><strong>Build relationships:</strong> Connect with head teachers, SENCO coordinators, governors</li>
+                            <li><strong>Document results:</strong> Track and measure student improvement outcomes</li>
+                            <li><strong>Scale systematically:</strong> Use success stories to win larger contracts</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>🏫 School Partnership Revenue Model:</h4>
+                        <p><strong>Pilot Program:</strong> Free 6-week after-school program (10 students)<br>
+                        <strong>First Contract:</strong> £15,000 annual after-school program<br>
+                        <strong>Expanded Services:</strong> £35,000 (after-school + holiday programs)<br>
+                        <strong>Multiple Schools:</strong> £75,000+ (3 school partnerships)<br>
+                        <strong>Local Authority:</strong> £100,000+ (district-wide contracts)</p>
+                    </div>
+
+                    <div class="conversation-style">
+                        <h4>Why schools need you:</h4>
+                        <p>• Teacher shortages mean less individual attention<br>
+                        • Pressure to improve SATs and Ofsted results<br>
+                        • Government funding available for catch-up programs<br>
+                        • Schools recognize tutoring effectiveness but lack resources<br>
+                        • Post-COVID learning gaps need addressing</p>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>🚨 Partnership Requirements:</h4>
+                        <p>This pathway requires enhanced DBS checks, professional indemnity insurance, proven track record, and ability to work with institutional processes. Longer sales cycles but much higher value contracts.</p>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ Pathway 3 Readiness Check:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">I have a strong track record with measurable student improvements</li>
+                            <li onclick="toggleTask(this)">I'm comfortable working within institutional frameworks</li>
+                            <li onclick="toggleTask(this)">I can handle group tutoring and program management</li>
+                            <li onclick="toggleTask(this)">I'm prepared for longer sales cycles (6-12 months)</li>
+                            <li onclick="toggleTask(this)">I have or can get enhanced DBS and professional insurance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: Understanding Your Three Growth Options Based on Feedback -->
+        <div class="phase-container">
+            <div class="phase-header" onclick="togglePhase(3)">
+                <h2>Step 3: Understanding Your Three Growth Options</h2>
+                <p class="subtitle">Analyzing feedback to choose your strategic pathway (Week 3)</p>
+                <span class="toggle-btn" id="toggle3">👇</span>
+            </div>
+            <div class="phase-content" id="phase3">
+                <div class="step">
+                    <h3>Making Sense of What You Heard 📊</h3>
+                    <p>Now let's turn those conversations into clear insights about which opportunities are strongest for your business.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🔍 Simple Analysis Framework:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Count positive responses:</strong> How many people showed genuine interest in each opportunity?</li>
+                            <li><strong>Note price feedback:</strong> What did people say about pricing for different services?</li>
+                            <li><strong>Identify urgent needs:</strong> Which problems seemed most pressing for parents?</li>
+                            <li><strong>Spot easy wins:</strong> What could you start offering next month with minimal investment?</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>📋 Sarah's Quick Analysis:</h4>
+                        <p><strong>Pathway 1 (Scale Current):</strong> 4/5 parents interested in group sessions at £20<br>
+                        <strong>Pathway 2 (SEN Support):</strong> 3/4 SEN parents would pay £50+ for local support<br>
+                        <strong>Pathway 3 (School Partnerships):</strong> 1/3 schools showed genuine interest<br>
+                        <strong>Decision:</strong> Start with group sessions (quick win) while training for SEN work</p>
+                    </div>
+
+                    <div class="conversation-style">
+                        <h4>Red Flags to Watch For:</h4>
+                        <p>• People being polite but not asking follow-up questions<br>
+                        • Consistent feedback that prices are too high<br>
+                        • Parents saying "that sounds nice" but not "when can we start?"<br>
+                        • Schools being vague about timelines or decision processes</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Pathway 1: Scale Your Existing Primary Tutoring 📈</h3>
+                    <p>This is the "do more of what's working" approach. Use your feedback to determine if this is viable and how to do it smartly.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🎯 What Your Conversations Should Have Revealed:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Group session interest:</strong> Did parents seem genuinely interested in group tutoring?</li>
+                            <li><strong>Price sensitivity:</strong> What price point got positive responses for group work?</li>
+                            <li><strong>Referral potential:</strong> Did people mention knowing other families who need help?</li>
+                            <li><strong>Service gaps:</strong> What did non-customers say would make them consider tutoring?</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>📊 Strong Signals for Pathway 1:</h4>
+                        <p>✅ Multiple parents interested in group sessions<br>
+                        ✅ Easy referrals available from current parents<br>
+                        ✅ Non-customers interested at lower price points<br>
+                        ✅ You already have capacity to take more students<br>
+                        ✅ Local demand seems strong</p>
+                    </div>
+
+                    <div class="how-to-section">
+                        <h4>🚀 Quick Implementation Based on Feedback:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Start with group sessions:</strong> If 3+ parents showed interest, launch a trial group</li>
+                            <li><strong>Optimize pricing:</strong> Use the price points that got positive responses</li>
+                            <li><strong>Ask for referrals:</strong> Contact parents who mentioned knowing other families</li>
+                            <li><strong>Address barriers:</strong> Fix the issues that stopped non-customers from using tutoring</li>
+                        </ol>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ Pathway 1 Decision Checklist:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">At least 3 current parents interested in group sessions</li>
+                            <li onclick="toggleTask(this)">Clear price point that parents find acceptable</li>
+                            <li onclick="toggleTask(this)">Identified at least 2 potential referrals</li>
+                            <li onclick="toggleTask(this)">Understand why non-customers don't use tutoring</li>
+                            <li onclick="toggleTask(this)">Confident I can handle 15-20 students</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Pathway 2: Specialize in SEN Children Support 🧠</h3>
+                    <p>This is the highest-value opportunity. Your conversations should have revealed whether there's genuine local demand and what parents will pay.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🎯 Key Insights from SEN Parent Conversations:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Current spending:</strong> What are SEN parents already paying for support?</li>
+                            <li><strong>Travel distance:</strong> How far do they currently go for help?</li>
+                            <li><strong>Qualification expectations:</strong> What training/credentials do they want to see?</li>
+                            <li><strong>Service gaps:</strong> What support can't they currently find locally?</li>
+                            <li><strong>Network size:</strong> How many other SEN families do they know?</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>💰 Sarah's SEN Market Discovery:</h4>
+                        <p><strong>Current Reality:</strong> Parents driving 30+ minutes, paying £50-60/hour<br>
+                        <strong>Local Demand:</strong> 4 parents knew 2-3 other families needing help<br>
+                        <strong>Qualification Need:</strong> Want dyslexia training, autism awareness<br>
+                        <strong>Price Acceptance:</strong> £45-55/hour considered reasonable for qualified support<br>
+                        <strong>Opportunity Size:</strong> Potentially 10-15 SEN students locally</p>
+                    </div>
+
+                    <div class="how-to-section">
+                        <h4>🛠️ Implementation Plan Based on Feedback:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Get qualified first:</strong> Invest in the specific training parents mentioned</li>
+                            <li><strong>Start with one specialty:</strong> Focus on the most common need you identified</li>
+                            <li><strong>Test with pilot families:</strong> Offer discounted rates to build experience and testimonials</li>
+                            <li><strong>Build your network:</strong> Connect with the SEN professionals parents mentioned</li>
+                        </ol>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>⚠️ Only Pursue This If:</h4>
+                        <p>• At least 3 SEN parents showed genuine interest<br>
+                        • They're willing to pay £40+ per hour<br>
+                        • You're genuinely passionate about supporting SEN children<br>
+                        • You're prepared to invest £1000+ in proper training</p>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ Pathway 2 Decision Checklist:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">Found genuine demand from 3+ SEN families</li>
+                            <li onclick="toggleTask(this)">Confirmed price acceptance of £40+ per hour</li>
+                            <li onclick="toggleTask(this)">Identified specific training requirements</li>
+                            <li onclick="toggleTask(this)">Located 8+ potential SEN students locally</li>
+                            <li onclick="toggleTask(this)">Personally motivated to serve SEN children</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Pathway 3: Partner with Schools & Local Authorities 🏫</h3>
+                    <p>This is the highest revenue potential but also the most complex. Your school conversations should have revealed genuine opportunities vs. polite interest.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🎯 Evaluating School Interest:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Genuine problems:</strong> Did schools describe specific, urgent challenges?</li>
+                            <li><strong>Numbers mentioned:</strong> Did they give you actual student numbers who need help?</li>
+                            <li><strong>Budget reality:</strong> Did they mention funding sources or budget availability?</li>
+                            <li><strong>Decision process:</strong> Did they explain how partnerships get approved?</li>
+                            <li><strong>Next steps:</strong> Did they suggest specific follow-up actions?</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>🏫 Strong vs. Weak School Interest:</h4>
+                        <p><strong>Strong Interest:</strong><br>
+                        "We have 15 Year 6 children struggling with SATs prep and no capacity to help them. We've worked with external providers before. Can you send me a proposal?"<br><br>
+                        
+                        <strong>Weak Interest:</strong><br>
+                        "That sounds nice. We always need more support. I'd have to speak to the governors. Maybe email me in a few months."</p>
+                    </div>
+
+                    <div class="how-to-section">
+                        <h4>🚀 Next Steps for Genuine Interest:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Pilot program proposal:</strong> Offer a small, free trial to prove your value</li>
+                            <li><strong>Build relationships:</strong> Stay in touch with decision-makers</li>
+                            <li><strong>Get qualified:</strong> Ensure you have enhanced DBS and insurance</li>
+                            <li><strong>Create case studies:</strong> Document results from any pilot work</li>
+                        </ol>
+                    </div>
+
+                    <div class="conversation-style">
+                        <h4>Reality Check:</h4>
+                        <p>School partnerships take 6-18 months to develop. Only pursue this if at least one school showed strong, specific interest with clear next steps. Otherwise, focus on the other pathways first and build your track record.</p>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ Pathway 3 Decision Checklist:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">At least 1 school showed strong, specific interest</li>
+                            <li onclick="toggleTask(this)">Received concrete student numbers and needs</li>
+                            <li onclick="toggleTask(this)">Clear next steps discussed</li>
+                            <li onclick="toggleTask(this)">Willing to invest time in relationship building</li>
+                            <li onclick="toggleTask(this)">Can handle institutional requirements (DBS, insurance, etc.)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Choosing Your Strategic Pathway -->
+        <div class="phase-container">
+            <div class="phase-header" onclick="togglePhase(3)">
+                <h2>Step 3: Choosing Your Strategic Pathway</h2>
+                <p class="subtitle">Deciding which opportunity to pursue first (Week 3)</p>
+                <span class="toggle-btn" id="toggle3">👇</span>
+            </div>
+            <div class="phase-content" id="phase3">
+                <div class="step">
+                    <h3>Pathway Selection Framework 🎯</h3>
+                    <p>Let's help you choose which of the three pathways aligns best with your current situation, goals, and capabilities.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>📊 Decision Matrix: Rate Each Pathway (1-5 scale)</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Time Investment Required:</strong> How much time can you realistically invest?</li>
+                            <li><strong>Financial Investment Needed:</strong> What's your budget for training/setup?</li>
+                            <li><strong>Personal Interest Level:</strong> Which pathway excites you most?</li>
+                            <li><strong>Market Opportunity in Your Area:</strong> Which has most potential locally?</li>
+                            <li><strong>Skill/Experience Match:</strong> Which suits your current abilities?</li>
+                            <li><strong>Risk Tolerance:</strong> How comfortable are you with uncertainty?</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>📋 Sarah's Pathway Analysis:</h4>
+                        <p><strong>Pathway 1 (Scale Current):</strong> Score 23/30<br>
+                        ✅ Low investment, matches skills, manageable risk<br>
+                        ❌ Limited income growth potential<br><br>
+                        
+                        <strong>Pathway 2 (SEN Support):</strong> Score 27/30<br>
+                        ✅ High income potential, growing market, personal interest<br>
+                        ❌ Requires training investment<br><br>
+                        
+                        <strong>Pathway 3 (School Partnerships):</strong> Score 18/30<br>
+                        ✅ Huge revenue potential<br>
+                        ❌ Long sales cycles, high complexity<br><br>
+                        
+                        <strong>Decision:</strong> Start with SEN specialization while scaling current business</p>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ Complete your pathway analysis:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">Rate all three pathways on the 6 criteria</li>
+                            <li onclick="toggleTask(this)">Calculate total scores for each pathway</li>
+                            <li onclick="toggleTask(this)">Identify your top-scoring pathway</li>
+                            <li onclick="toggleTask(this)">Consider if you could combine pathways</li>
+                            <li onclick="toggleTask(this)">Make your strategic decision</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Pathway Implementation Planning 📋</h3>
+                    <p>Now let's create specific action plans for whichever pathway(s) you've chosen to pursue.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🛣️ Pathway 1: Scaling Current Business (6-9 months)</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Month 1-2:</strong> Optimize pricing, improve efficiency, ask for referrals</li>
+                            <li><strong>Month 3-4:</strong> Add group sessions, introduce package deals</li>
+                            <li><strong>Month 5-6:</strong> Expand online options, reduce travel costs</li>
+                            <li><strong>Month 7-9:</strong> Reach capacity (15-20 students), consider hiring help</li>
+                        </ol>
+                    </div>
+
+                    <div class="how-to-section">
+                        <h4>🧠 Pathway 2: SEN Specialization (12-18 months)</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Month 1-3:</strong> Complete SEN training courses and qualifications</li>
+                            <li><strong>Month 4-6:</strong> Offer SEN assessments to current families, build case studies</li>
+                            <li><strong>Month 7-9:</strong> Market SEN services, raise prices, develop specialized materials</li>
+                            <li><strong>Month 10-12:</strong> Build reputation, network with professionals</li>
+                            <li><strong>Month 13-18:</strong> Scale to 8-10 SEN students at premium rates</li>
+                        </ol>
+                    </div>
+
+                    <div class="how-to-section">
+                        <h4>🏫 Pathway 3: School Partnerships (18-24 months)</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Month 1-6:</strong> Build strong track record, get enhanced DBS and insurance</li>
+                            <li><strong>Month 7-12:</strong> Research schools, offer pilot programs, build relationships</li>
+                            <li><strong>Month 13-18:</strong> Secure first contract, deliver excellent results</li>
+                            <li><strong>Month 19-24:</strong> Scale to multiple schools, pursue local authority contracts</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Choosing Your Strategic Pathway Based on Evidence -->
+        <div class="phase-container">
+            <div class="phase-header" onclick="togglePhase(4)">
+                <h2>Step 4: Choosing Your Strategic Pathway</h2>
+                <p class="subtitle">Making evidence-based decisions from your conversations (Week 3)</p>
+                <span class="toggle-btn" id="toggle4">👇</span>
+            </div>
+            <div class="phase-content" id="phase4">
+                <div class="step">
+                    <h3>Decision Framework Based on Your Findings 🎯</h3>
+                    <p>Now let's use what you learned to make a smart choice about which pathway to pursue first.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>📊 Simple Scoring System (Rate each pathway 1-5):</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Market Interest:</strong> How many people showed genuine enthusiasm?</li>
+                            <li><strong>Price Acceptance:</strong> Are people willing to pay profitable rates?</li>
+                            <li><strong>Speed to Revenue:</strong> How quickly could you start earning from this?</li>
+                            <li><strong>Personal Fit:</strong> Does this align with your skills and interests?</li>
+                            <li><strong>Risk Level:</strong> How comfortable are you with the uncertainties?</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>📋 Sarah's Evidence-Based Decision:</h4>
+                        <p><strong>Market Research Results:</strong><br>
+                        • 4/5 current parents interested in group sessions<br>
+                        • 3/4 SEN parents would pay £50+ for local support<br>
+                        • 1/3 schools showed genuine interest<br>
+                        • 3/4 non-customers interested at lower prices<br><br>
+                        
+                        <strong>Decision:</strong> Start with Pathway 1 (group sessions) immediately while training for Pathway 2 (SEN support). Pathway 3 goes on 12-month plan.</p>
+                    </div>
+
+                    <div class="conversation-style">
+                        <h4>Smart Strategy: You Don't Have to Choose Just One!</h4>
+                        <p>Most successful tutors combine pathways over time. Start with the quickest win, then add others as you grow. The key is having evidence for your decisions rather than just guessing.</p>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ Complete your pathway analysis:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">Score all three pathways based on conversation feedback</li>
+                            <li onclick="toggleTask(this)">Identify which pathway has strongest market evidence</li>
+                            <li onclick="toggleTask(this)">Choose primary pathway to start with</li>
+                            <li onclick="toggleTask(this)">Plan timeline for adding second pathway</li>
+                            <li onclick="toggleTask(this)">Set specific success metrics for your chosen path</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Implementation Planning Based on Your Choice 📋</h3>
+                    <p>Now let's create specific action plans based on which pathway your market research supported.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🛣️ If Pathway 1 Won: Scaling Current Business (3-6 months)</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Month 1:</strong> Launch group sessions with interested parents, optimize pricing</li>
+                            <li><strong>Month 2:</strong> Ask for referrals from happy group session parents</li>
+                            <li><strong>Month 3:</strong> Add online options, expand to neighboring areas</li>
+                            <li><strong>Month 4-6:</strong> Reach 15-20 students, consider hiring help</li>
+                        </ol>
+                    </div>
+
+                    <div class="how-to-section">
+                        <h4>🧠 If Pathway 2 Won: SEN Specialization (6-12 months)</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Month 1-2:</strong> Enroll in specific SEN training identified by parents</li>
+                            <li><strong>Month 3-4:</strong> Offer pilot sessions to interested SEN families at reduced rates</li>
+                            <li><strong>Month 5-6:</strong> Build case studies, get referrals, raise to full pricing</li>
+                            <li><strong>Month 7-12:</strong> Scale to 8-10 SEN students, expand specialty areas</li>
+                        </ol>
+                    </div>
+
+                    <div class="how-to-section">
+                        <h4>🏫 If Pathway 3 Won: School Partnerships (6-18 months)</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Month 1-3:</strong> Develop pilot program proposal for interested schools</li>
+                            <li><strong>Month 4-6:</strong> Deliver free pilot, document results meticulously</li>
+                            <li><strong>Month 7-12:</strong> Secure first paid contract, deliver excellent results</li>
+                            <li><strong>Month 13-18:</strong> Scale to additional schools, pursue authority contracts</li>
+                        </ol>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>🚨 If No Clear Winner Emerged:</h4>
+                        <p>If your conversations didn't show strong interest in any pathway, that's valuable information! It might mean you need to improve your current service first, or explore different opportunities. Don't force a pathway that doesn't have market support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 5: Understanding Your Numbers (Unit Economics) -->
+        <div class="phase-container">
+            <div class="phase-header" onclick="togglePhase(4)">
+                <h2>Step 4: Understanding Your Money (Unit Economics)</h2>
+                <p class="subtitle">The business numbers that will guide your growth decisions (Week 4)</p>
+                <span class="toggle-btn" id="toggle4">👇</span>
+            </div>
+            <div class="phase-content" id="phase4">
+                <div class="step">
+                    <h3>What Does Each Student Actually Make You? 💰</h3>
+                    <p>This is called "unit economics" - basically, how much profit you make from each student after all your costs. This is the most important number in your business!</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🧮 Let's calculate your profit per student (simple version):</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Monthly revenue per student:</strong> Hours per month × hourly rate (e.g., 4 hours × £25 = £100)</li>
+                            <li><strong>Direct costs per student:</strong> Travel costs + materials + any platform fees (e.g., £8 petrol + £2 worksheets = £10)</li>
+                            <li><strong>Your profit per student:</strong> Revenue - Direct costs (e.g., £100 - £10 = £90)</li>
+                            <li><strong>Your hourly profit:</strong> Monthly profit ÷ total hours spent (including travel/prep)</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>📊 Sarah's Unit Economics Calculation:</h4>
+                        <p><strong>Student: Emma (Year 4 Maths)</strong><br>
+                        • 4 sessions per month × £25 = £100 revenue<br>
+                        • Costs: £6 travel + £3 materials = £9<br>
+                        • Net profit: £91 per month<br>
+                        • Time: 4 hours tutoring + 1 hour travel/prep = 5 hours total<br>
+                        • <strong>Real hourly rate: £91 ÷ 5 = £18.20/hour</strong></p>
+                    </div>
+
+                    <div class="conversation-style">
+                        <h4>Why this matters for scaling:</h4>
+                        <p>If you're only making £12/hour after all costs and time, you need to either charge more, reduce costs, or work more efficiently before adding more students. If you're making £25/hour, you have a great foundation for growth!</p>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ Calculate for each of your current students:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">Monthly revenue from each student</li>
+                            <li onclick="toggleTask(this)">Direct costs for each student (travel, materials, etc.)</li>
+                            <li onclick="toggleTask(this)">Net profit per student per month</li>
+                            <li onclick="toggleTask(this)">Total time spent per student (including prep/travel)</li>
+                            <li onclick="toggleTask(this)">Real hourly profit rate for each student</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Your Business Breakeven Point 📈</h3>
+                    <p>Let's figure out exactly how many students you need to cover all your business costs and start making a proper profit.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🎯 Finding your breakeven point:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>List your fixed monthly costs:</strong> Insurance, phone, website, car costs, etc.</li>
+                            <li><strong>Add your personal target income:</strong> How much do you want to earn per month?</li>
+                            <li><strong>Calculate total monthly target:</strong> Fixed costs + desired income</li>
+                            <li><strong>Divide by average profit per student:</strong> This gives you your target number of students</li>
+                            <li><strong>Check if this is realistic:</strong> Can you physically handle this many students?</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>📋 Sarah's Breakeven Analysis:</h4>
+                        <p><strong>Fixed Monthly Costs:</strong><br>
+                        • Insurance: £15<br>
+                        • Phone/Internet: £40<br>
+                        • Car costs (business portion): £80<br>
+                        • Marketing/Website: £20<br>
+                        • <strong>Total fixed costs: £155</strong><br><br>
+                        
+                        <strong>Personal Income Target:</strong> £1,500/month<br>
+                        <strong>Total Monthly Target:</strong> £155 + £1,500 = £1,655<br>
+                        <strong>Students Needed:</strong> £1,655 ÷ £91 (profit per student) = 18.2 students<br>
+                        <strong>Reality Check:</strong> 18 students × 4 hours = 72 hours/month = manageable!</p>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>⚠️ Important Reality Check:</h4>
+                        <p>If your breakeven analysis shows you need 30+ students to hit your income target, you probably need to either raise your prices, reduce costs, or add higher-value services before scaling.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Spotting Your Best Business Opportunities 🔍</h3>
+                    <p>Now let's identify which types of students and services could be most profitable for your business.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>💡 Analyzing your most profitable opportunities:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Compare your current students:</strong> Which ones are most profitable? What do they have in common?</li>
+                            <li><strong>Identify premium opportunities:</strong> What could you charge more for? (11+ prep, group sessions, holiday courses)</li>
+                            <li><strong>Look for efficiency gains:</strong> How could you serve more students in the same time?</li>
+                            <li><strong>Consider recurring revenue:</strong> What services could run for longer periods?</li>
+                            <li><strong>Spot underserved niches:</strong> What do parents want that competitors don't offer?</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>🎯 Sarah's Opportunity Analysis:</h4>
+                        <p><strong>Most Profitable:</strong> Year 6 students preparing for 11+ (can charge £35/hour)<br>
+                        <strong>Most Efficient:</strong> Local students (no travel time)<br>
+                        <strong>Longest Retention:</strong> Students with learning difficulties (stay 12+ months)<br>
+                        <strong>Underserved Market:</strong> Group sessions for SATs prep<br>
+                        <strong>Premium Opportunity:</strong> Holiday intensives (£40/hour, 3-hour blocks)</p>
+                    </div>
+
+                    <div class="conversation-style">
+                        <h4>Strategic Thinking:</h4>
+                        <p>Instead of just "getting more students," focus on getting the RIGHT students. One 11+ student at £35/hour might be worth more than two Year 2 students at £20/hour, especially when you factor in the different preparation time required.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 5: Growth Strategy & Financial Planning -->
+        <div class="phase-container">
+            <div class="phase-header" onclick="togglePhase(5)">
+                <h2>Step 5: Your Growth Strategy & Financial Plan</h2>
+                <p class="subtitle">Building a profitable, scalable business model (Week 5)</p>
+                <span class="toggle-btn" id="toggle5">👇</span>
+            </div>
+            <div class="phase-content" id="phase5">
+                <div class="step">
+                    <h3>Creating Your Revenue Optimization Strategy 📊</h3>
+                    <p>Let's build a clear plan to increase your profitability through smart pricing and service mix, not just more hours.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🚀 Revenue optimization tactics (pick 2-3 to start):</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Price Segmentation:</strong> Charge different rates for different services (basic £25, 11+ prep £35, group £20 each)</li>
+                            <li><strong>Package Deals:</strong> Sell 4-week or 8-week packages upfront (improves cash flow + retention)</li>
+                            <li><strong>Premium Add-ons:</strong> Offer extra services like progress reports, parent consultations, homework support</li>
+                            <li><strong>Group Sessions:</strong> Teach 2-3 students together (charge each £20, earn £40-60/hour)</li>
+                            <li><strong>Seasonal Intensives:</strong> Holiday courses, SATs bootcamps, 11+ preparation weeks</li>
+                            <li><strong>Online Options:</strong> Add online sessions to reduce travel time and costs</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>💰 Sarah's Revenue Mix Strategy:</h4>
+                        <p><strong>Current:</strong> 6 students × £25/hour = £600/month<br>
+                        <strong>Optimized Mix:</strong><br>
+                        • 4 regular students at £28/hour = £448<br>
+                        • 2 group sessions (3 students each) at £22/hour = £396<br>
+                        • 1 monthly holiday intensive = £200<br>
+                        • <strong>Total: £1,044/month (+73% increase!)</strong></p>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ Design your revenue optimization plan:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">Set different price points for different services</li>
+                            <li onclick="toggleTask(this)">Design at least one premium service offering</li>
+                            <li onclick="toggleTask(this)">Plan a group session trial with 2-3 students</li>
+                            <li onclick="toggleTask(this)">Create a package deal structure</li>
+                            <li onclick="toggleTask(this)">Calculate projected revenue from new pricing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Your 6-Month Financial Growth Plan 📅</h3>
+                    <p>Let's create a realistic month-by-month plan to grow your business profitably and sustainably.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>📈 Month-by-month growth planning:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Month 1:</strong> Optimize current students (raise prices for new bookings, improve retention)</li>
+                            <li><strong>Month 2:</strong> Add 2-3 new students through referrals from optimized pricing</li>
+                            <li><strong>Month 3:</strong> Launch one premium service (11+ prep or group sessions)</li>
+                            <li><strong>Month 4:</strong> Expand capacity with online options or weekend slots</li>
+                            <li><strong>Month 5:</strong> Add seasonal/holiday programs</li>
+                            <li><strong>Month 6:</strong> Evaluate hiring help or partnering with another tutor</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>📊 Sarah's 6-Month Financial Projection:</h4>
+                        <p><strong>Current (Month 0):</strong> £600/month<br>
+                        <strong>Month 1:</strong> £650 (price increases)<br>
+                        <strong>Month 2:</strong> £850 (2 new students)<br>
+                        <strong>Month 3:</strong> £1,100 (added group sessions)<br>
+                        <strong>Month 4:</strong> £1,300 (online sessions, less travel)<br>
+                        <strong>Month 5:</strong> £1,500 (holiday programs)<br>
+                        <strong>Month 6:</strong> £1,800 (partner tutor for overflow)</p>
+                    </div>
+
+                    <div class="conversation-style">
+                        <h4>Key Success Factors:</h4>
+                        <p>• Focus on profit per hour, not just total revenue<br>
+                        • Always test new pricing/services with existing happy customers first<br>
+                        • Track your unit economics monthly - they should improve, not just revenue<br>
+                        • Don't sacrifice quality for growth - reputation is your biggest asset</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Risk Management & Contingency Planning 🛡️</h3>
+                    <p>Let's make sure your growth plan is sustainable and has backup options built in.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>🎯 Key risks to monitor and plan for:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Seasonal fluctuations:</strong> Summer holidays, Christmas breaks - plan for 20-30% revenue drops</li>
+                            <li><strong>Student churn:</strong> If you lose 2-3 students simultaneously, how quickly can you replace them?</li>
+                            <li><strong>Price resistance:</strong> What's your minimum viable price? When would you need to offer discounts?</li>
+                            <li><strong>Capacity limits:</strong> What happens when you're fully booked? Do you raise prices or add help?</li>
+                            <li><strong>Competition:</strong> What if a new tutoring center opens nearby?</li>
+                        </ol>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>🚨 Financial Safety Rules:</h4>
+                        <p>• Keep 2-3 months of fixed costs in emergency savings<br>
+                        • Never rely on more than 30% of income from one family<br>
+                        • Have at least 3 different ways to find new students<br>
+                        • Review your unit economics monthly - don't let bad habits creep in</p>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ Build your safety net:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">Calculate my emergency fund target (3 months fixed costs)</li>
+                            <li onclick="toggleTask(this)">Identify my top 3 student acquisition methods</li>
+                            <li onclick="toggleTask(this)">Plan for seasonal revenue drops</li>
+                            <li onclick="toggleTask(this)">Set up monthly financial review routine</li>
+                            <li onclick="toggleTask(this)">Create contingency plans for losing major students</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 6: Your Personal Action Plan -->
+        <div class="phase-container">
+            <div class="phase-header" onclick="togglePhase(6)">
+                <h2>Step 6: Your Personal Action Plan</h2>
+                <p class="subtitle">Creating your roadmap forward with clear financial targets (Week 6)</p>
+                <span class="toggle-btn" id="toggle6">👇</span>
+            </div>
+            <div class="phase-content" id="phase6">
+                <div class="step">
+                    <h3>Creating Your Personal Growth Plan with Clear Financial Targets 📋</h3>
+                    <p>Based on your unit economics and market research, let's create a specific, measurable plan that works for your situation.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>📝 Your Financial Target Setting Exercise:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Current monthly profit:</strong> What are you making now after all costs?</li>
+                            <li><strong>Target monthly income:</strong> What would feel like a significant improvement?</li>
+                            <li><strong>Gap analysis:</strong> How much more profit do you need monthly?</li>
+                            <li><strong>Best opportunities:</strong> Which of your opportunities from Step 4 could fill this gap?</li>
+                            <li><strong>Timeline:</strong> What's a realistic timeframe to achieve this?</li>
+                            <li><strong>First action:</strong> What's the single most important thing to do this month?</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>📋 Sarah's Personal Financial Plan:</h4>
+                        <p><strong>Current profit:</strong> £540/month (£600 revenue - £60 costs)<br>
+                        <strong>Target income:</strong> £1,200/month<br>
+                        <strong>Gap to fill:</strong> £660/month additional profit<br>
+                        <strong>Strategy to get there:</strong><br>
+                        • Raise prices by £3/hour for new bookings (+£72/month)<br>
+                        • Add 2 group sessions with 3 students each (+£240/month)<br>
+                        • Add one 11+ student at £35/hour (+£140/month)<br>
+                        • Run monthly holiday intensive (+£200/month)<br>
+                        <strong>Total additional profit: £652/month = Target achieved!</strong><br>
+                        <strong>Timeline:</strong> 4 months to fully implement<br>
+                        <strong>This month:</strong> Test price increase with next new enquiry</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Your 90-Day Implementation Plan 🚀</h3>
+                    <p>Let's break down your financial goals into specific, actionable steps for the next 90 days.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>📅 Your 90-day roadmap:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Days 1-30:</strong> Optimize current business (pricing, retention, efficiency)</li>
+                            <li><strong>Days 31-60:</strong> Launch one new revenue stream (premium service or group sessions)</li>
+                            <li><strong>Days 61-90:</strong> Scale successful initiatives and add capacity</li>
+                        </ol>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ Month 1 (Days 1-30) - Optimization:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">Calculate exact unit economics for each current student</li>
+                            <li onclick="toggleTask(this)">Test new pricing with next 2 new enquiries</li>
+                            <li onclick="toggleTask(this)">Ask 3 best parents for specific referrals</li>
+                            <li onclick="toggleTask(this)">Reduce most expensive costs (travel, materials)</li>
+                            <li onclick="toggleTask(this)">Track weekly revenue and profit numbers</li>
+                        </ul>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ Month 2 (Days 31-60) - New Revenue Stream:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">Launch one premium service (11+, groups, or intensives)</li>
+                            <li onclick="toggleTask(this)">Test with 2-3 existing families first</li>
+                            <li onclick="toggleTask(this)">Measure profitability of new service vs. regular tutoring</li>
+                            <li onclick="toggleTask(this)">Refine pricing based on early results</li>
+                            <li onclick="toggleTask(this)">Document what works for future scaling</li>
+                        </ul>
+                    </div>
+
+                    <div class="checklist">
+                        <h4>✅ Month 3 (Days 61-90) - Scale & Expand:</h4>
+                        <ul class="checklist-items">
+                            <li onclick="toggleTask(this)">Add capacity in your most profitable service area</li>
+                            <li onclick="toggleTask(this)">Consider online options to reduce travel costs</li>
+                            <li onclick="toggleTask(this)">Plan for seasonal opportunities (Christmas, Easter, summer)</li>
+                            <li onclick="toggleTask(this)">Evaluate if you need help/partners to grow further</li>
+                            <li onclick="toggleTask(this)">Set up systems for tracking and managing growth</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <h3>Key Performance Indicators (KPIs) to Track 📊</h3>
+                    <p>These are the specific numbers you should check every month to make sure your business is heading in the right direction.</p>
+                    
+                    <div class="how-to-section">
+                        <h4>📈 Your Monthly Business Dashboard:</h4>
+                        <ol class="how-to-steps">
+                            <li><strong>Revenue per student:</strong> Is this increasing over time?</li>
+                            <li><strong>Profit per hour worked:</strong> Including all prep and travel time</li>
+                            <li><strong>Student retention rate:</strong> How many students stay for 3+ months?</li>
+                            <li><strong>Cost per new student:</strong> How much does it cost you to acquire each new student?</li>
+                            <li><strong>Capacity utilization:</strong> What percentage of your available time is booked?</li>
+                            <li><strong>Average student value:</strong> Total revenue over student lifetime</li>
+                        </ol>
+                    </div>
+
+                    <div class="example-box">
+                        <h4>📊 Sarah's KPI Targets:</h4>
+                        <p><strong>Revenue per student:</strong> Increase from £100 to £120/month<br>
+                        <strong>Profit per hour:</strong> Increase from £18 to £25/hour<br>
+                        <strong>Retention rate:</strong> 85% of students stay 6+ months<br>
+                        <strong>Acquisition cost:</strong> Under £20 per new student<br>
+                        <strong>Capacity:</strong> 80% booked (allows for flexibility)<br>
+                        <strong>Student lifetime value:</strong> £600+ over 6 months</p>
+                    </div>
+
+                    <div class="conversation-style">
+                        <h4>Why these numbers matter:</h4>
+                        <p>If your profit per hour is going down, you're working harder but not smarter. If retention is low, fix that before trying to get new students. If acquisition costs are high, focus on referrals. These numbers tell you exactly where to focus your energy for maximum impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="next-steps">
+            <h2>🎉 Your Strategic Growth Journey Starts Now!</h2>
+            <p>You now have a complete framework to scale your tutoring business strategically, targeting the highest-value opportunities in the £2B UK market.</p>
+            <p>Remember: Success comes from focusing on the right opportunities with clear financial targets, not just working harder.</p>
+            <p><strong>Your next action:</strong> Complete Step 1 this week to understand your current foundation, then choose your strategic pathway based on your goals and capabilities.</p>
+        </div>
+    </div>
+
+    <script>
+        function togglePhase(phaseNum) {
+            const content = document.getElementById(`phase${phaseNum}`);
+            const toggle = document.getElementById(`toggle${phaseNum}`);
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                toggle.innerHTML = '👇';
+            } else {
+                content.classList.add('active');
+                toggle.innerHTML = '👆';
+            }
+        }
+
+        function toggleTask(element) {
+            element.classList.toggle('completed');
+            saveProgress();
+        }
+
+        function saveProgress() {
+            const completedTasks = [];
+            document.querySelectorAll('.checklist-items li').forEach((item, index) => {
+                if (item.classList.contains('completed')) {
+                    completedTasks.push(index);
+                }
+            });
+            // Note: In a real implementation, you would save this to localStorage or a database
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Open the first phase by default
+            togglePhase(1);
+        });
+    </script>
+</body>
+</html>
+                
